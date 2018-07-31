@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+</head>
+<body>
+<script>
+/*
+▼ 課題1
+
+下記配列から最大値を取得できる関数を作ってください。
+
+つまり 27 が出力されるロジックを作る。ということです。
+
+var array = [13, 27, 18, 26];
+
+↑これが終わったら、課題2をやってみてください。
+ */
+
+var array = [13, 27, 18, 26];
+
+// ES2015　スプレッド演算子
+function maxArray2(array) {
+  return Math.max(...array);
+}
+console.log('maxArray2：' + maxArray2(array));
+
+// 従来のやり方らしい
+function maxArray(array) {
+  return Math.max.apply(null, array);
+}
+console.log('maxArray：' + maxArray(array));
+
+/* 参考文献
+配列の最大値を取得する　ES2015版
+https://numb86-tech.hatenablog.com/entry/2017/08/05/093326
+ */
+
+</script>
+</body>
+</html>
