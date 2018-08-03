@@ -27,7 +27,16 @@ console.log('data2の平均値：' + arrayAverage(data2));
 
 function pickHighAverage(array) {
   var average = arrayAverage(array);
+  var list = [];
+  [].forEach.call(array, (data) => {
+    if(data >= average) {
+      list.push(data);
+    }
+  });
+  return list;
 }
+console.log('data1の平均値以上の値：' + pickHighAverage(data1));
+console.log('data2の平均値以上の値：' + pickHighAverage(data2));
 
 </script>
 </body>
