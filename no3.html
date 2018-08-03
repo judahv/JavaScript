@@ -19,13 +19,14 @@ blue という値になるインデックスは 3 5 7 です。
 
 var array = ["yellow","yellow","yellow","yellow","yellow","yellow","yellow","yellow","yellow","yellow"];
 
-function changeColor() {
-  for(var i = 3; i <= 7; i += 2 ) {
-    array[i] = "blue";
-  }
+function changeColor(list) {
+  [].forEach.call(list, function(data) {
+    array[data] = "blue";
+  });
+  return array;
 }
-changeColor(array);
-console.log(array);
+
+console.log(changeColor([3, 5, 7]));
 
 </script>
 </body>
