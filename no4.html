@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+</head>
+<body>
+<script>
+/*
+▼ 課題4
+  {
+    id: 1,
+    name: 'numberOne',
+    rate: 10,
+  },
+  {
+    id: 2,
+    name: 'numberTwo',
+    rate: 20,
+  },
+  {
+    id: 3,
+    name: 'numberThree',
+    rate: 30,
+  },
+];
+
+この `rate` プロパティの値を加算して合計値を算出してください。
+ */
+
+ var array = [{
+    id: 1,
+    name: 'numberOne',
+    rate: 10,
+  },
+  {
+    id: 2,
+    name: 'numberTwo',
+    rate: 20,
+  },
+  {
+    id: 3,
+    name: 'numberThree',
+    rate: 30,
+  },
+];
+
+function sumArrayRate() {
+  var rate = [];
+  [].forEach.call(array, (data) => {
+    rate.push(data['rate']);
+  });
+  return rate.reduce((a,x) => { return a+= x } ,0);
+}
+
+console.log(sumArrayRate());
+
+</script>
+</body>
+</html>
