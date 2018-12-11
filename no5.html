@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+</head>
+<body>
+<script>
+/*
+▼ 課題5
+var data1 = [59, 39, 100, 2, 15, 40, 84, 97];
+var data2 = [63, 18, 64, 97, 50, 98];
+
+下記に示すものをそれぞれ出力してください。
+1. 配列 `data1` `data2` の合計数値の平均値を出力してください。
+2. 1で出力された平均値以上の数値を全て抽出してください。
+ */
+
+var data1 = [59, 39, 100, 2, 15, 40, 84, 97];
+var data2 = [63, 18, 64, 97, 50, 98];
+
+function arrayAverage(array) {
+  var sum = array.reduce((a,x) => { return a+= x } ,0);
+  return sum / array.length;
+}
+console.log('data1の平均値：' + arrayAverage(data1));
+console.log('data2の平均値：' + arrayAverage(data2));
+
+function pickHighAverage(array) {
+  var average = arrayAverage(array);
+  var list = [];
+  [].forEach.call(array, (data) => {
+    if(data >= average) {
+      list.push(data);
+    }
+  });
+  return list;
+}
+console.log('data1の平均値以上の値：' + pickHighAverage(data1));
+console.log('data2の平均値以上の値：' + pickHighAverage(data2));
+
+</script>
+</body>
+</html>
